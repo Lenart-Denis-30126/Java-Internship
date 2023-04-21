@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>PitstopOil Management</title>
+
+  <link rel="stylesheet" href="tasks.component.css">
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+
+<div class="topnav">
+  <a href="management">Management</a>
+  <a href="users">Users</a>
+  <a class="active" href="tasks">Tasks</a>
+  <a href="orders">Orders</a>
+  <a href="stock">Stock</a>
+  <a href="products">Products</a>
+  <a href="contact">Contact</a>
+  <input type="text" placeholder="Search..">
+
+</div>
+
+<header>
+
+</header>
+
+<main>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4 col-md-6">
+        <div class="card">
+          <div class="card-block" *ngFor="let user of users">
+<!--            <span >{{getOrdersById(user.username)}}</span>-->
+            <div class="row align-items-center justify-content-center">
+              <div class="col-auto">
+                <img class="img-fluid rounded-circle" style="width:70px;" src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="dashboard-user">
+              </div>
+              <div class="col">
+                <h5>{{user.name}}</h5>
+                <span>{{user.role}}</span>
+              </div>
+            </div>
+            <ul class="task-list">
+              <li>
+                <i class="task-icon bg-c-green"></i>
+                <h6><span class="float-right text-muted">Due: 29 Aug.</span></h6>
+                <h6>E-mail: {{user.email}}</h6>
+
+                <p class="text-muted" *ngFor="let order of orders">Assigned Order No. {{order.id}}</p>
+              </li>
+              <li>
+                <i class="task-icon bg-c-green"></i>
+                <h6><span class="float-right text-muted">Due: 30 Aug.</span></h6>
+                <p class="text-muted"></p>
+              </li>
+              <li>
+                <i class="task-icon bg-c-green"></i>
+                <h6><span class="float-right text-muted">Due: 1 Sept.</span></h6>
+                <p class="text-muted"></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>PitstopOil Management</title>
+
+  <link rel="stylesheet" href="user.component.css">
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+
+<div class="topnav">
+  <a href="management">Management</a>
+  <a class="active" href="users">Users</a>
+  <a href="tasks">Tasks</a>
+  <a href="orders">Orders</a>
+  <a href="stock">Stock</a>
+  <a href="products">Products</a>
+  <a href="contact">Contact</a>
+  <input type="text" placeholder="Search..">
+</div>
+
+<header>
+
+</header>
+
+<main class="card-arrange">
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-8 col-lg-6">
+        <!-- Section Heading-->
+        <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+          <h3 class="titluUsers">Users <span></span></h3>
+          <p>See users registered, add users or delete users:</p>
+          <a href="/addForm" class="buttonAdd">Add</a>
+
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Single Advisor-->
+      <div class="col-12 col-sm-6 col-lg-3" *ngFor="let user of users ">
+        <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+          <!-- Team Thumb-->
+          <div class="advisor_thumb"><img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="">
+            <!-- Social Info-->
+
+            <div class="social-info"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+          </div>
+          <!-- Team Details-->
+          <div class="single_advisor_details_info">
+            <h6>{{user.name}}</h6>
+            <p class="designation">{{user.role}}</p>
+            <p class="designation">{{user.car}}</p>
+          </div>
+          <button class="deleteButton" (click)="deleteUser(user)">Delete</button>
+          <a href='userUpdate' class="udpateButton" (click)="updateUser(user)">Update</a>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</main>
+
+</body>
+
+</html>
